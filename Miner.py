@@ -16,7 +16,7 @@ class StdOutListener(StreamListener):
     def on_status(self, status):
 
         # establish db
-        conn = sqlite3.connect("#WWDC2017.sqlite3")  # db created if no db.sqlite3 found.
+        conn = sqlite3.connect("db.sqlite3")  # db created if no db.sqlite3 found.
         c = conn.cursor()
 
         # create db table for data.
@@ -28,7 +28,7 @@ class StdOutListener(StreamListener):
 
         # write data.
         if status.text.find("RT @") == -1 or status.text.startswith("@"):  # ignore manual RTs.
-            print("\n" + status.lang, status.created_at, status.user.screen_name, analysis.sentiment)
+            print("\n" + tweet.translate(non_bmp_map), analysis.sentiment)
 
             c.execute("INSERT INTO twitter(created_at, screen_name, lang, text, UserProfileName, UserDescription, UserLocation, FavoritesCount, TotalTweetsCount, UserFriendCount, UserFollowersCount, TimeZone, UTCOffset, GeoEnabled, IfUserVerified, IfContributors, TweetSource, coordinates, SentimentPolarity, SentimentSubjectivity) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)",
                      (status.created_at, status.user.screen_name, status.lang, status.text, status.user.name, status.user.description, status.user.location, status.user.favourites_count, status.user.statuses_count, status.user.friends_count, status.user.followers_count, status.user.time_zone, status.user.utc_offset, status.user.geo_enabled, status.user.verified, status.contributors, status.source, str(status.geo), analysis.sentiment.polarity, analysis.sentiment.subjectivity))
