@@ -5,10 +5,7 @@ import sys
 from textblob import TextBlob
 
 # auth
-ckey="5tokDdzZ31AVXfEtqG462r9lH"
-csecret="1VJo6eekVEq57iyFLK3HXkMAUPUrc0wXC46R113vSbUy0bLEm0"
-atoken="843762251135901696-pmCo7hG1lr6eVkWQdznSV1OiJlKh7TF"
-asecret="ncaDmeCAwEk2cYSaCR2Usz4eCQgapbAmgPHlUo6FRpIQT"
+
 
 non_bmp_map = dict.fromkeys(range(0x10000, sys.maxunicode + 1), 0xfffd)
 
