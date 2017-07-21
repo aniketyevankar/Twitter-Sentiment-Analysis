@@ -21,7 +21,7 @@ class StdOutListener(StreamListener):
     def on_status(self, status):
 
         # establish db
-        conn = sqlite3.connect("MyDBName.sqlite3")  # db created if no db.sqlite3 found.
+        conn = sqlite3.connect("MyDBName.sqlite3")  # db created if no MyDBName.sqlite3 found.
         c = conn.cursor()
 
         # create db table for data.
