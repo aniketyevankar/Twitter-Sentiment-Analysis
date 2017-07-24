@@ -33,3 +33,6 @@ Here we are using SQLite3 database to export these details.
     - -1 indicates sentiments of give text is Negative
     - +1 indicates sentiments of give text is Positive
     -  0 indicates sentiments of give text is Neutral
+
+Future room for upgrade / enhancements:
+1. Can improve analysis part.
