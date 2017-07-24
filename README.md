@@ -30,6 +30,6 @@ This application basically consists of 3 main areas to focus:
 Here we are using SQLite3 database to export these details. 
 
 3. Sentimental Analysis: We are using module 'Textblob' to do sentimental analysis. In this module, sentimental value is further categorized into two sub-parts SentimentPolarity and SentimentSubjectivity. The value of SentimentPolarity range from -1 to +1.
-    -1 indicates sentiments of give text is Negative
-    +1 indicates sentiments of give text is Positive
-     0 indicates sentiments of give text is Neutral
+    - -1 indicates sentiments of give text is Negative
+    - +1 indicates sentiments of give text is Positive
+    -  0 indicates sentiments of give text is Neutral
