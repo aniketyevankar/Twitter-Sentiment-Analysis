@@ -3,7 +3,7 @@ from tweepy.streaming import StreamListener
 import sqlite3
 import sys
 from textblob import TextBlob
-import input
+import credentials
 
 non_bmp_map = dict.fromkeys(range(0x10000, sys.maxunicode + 1), 0xfffd)
 
